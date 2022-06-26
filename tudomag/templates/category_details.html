@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Detalii categorie {{ category.name }}{% endblock %}
+
+{% block content %}
+<div> Categoria {{ category.name }}</div>
+<div class="row">
+    {% for product in products %}
+
+    <div class="col-xl-3 col-12">
+        <div class="card">
+            {% if product.image %}
+            <img src="{{ product.image.url }}" class="card-img-top" alt="...">
+            {% else %}
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ya-webdesign.com%2Fimages%2Fno-image-available-png-3.png&f=1&nofb=1"
+                 class="card-img-top" alt="...">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">{{ product.price }} Lei</p>
+
+                <a href="#" class="btn btn-primary">Adauga in cos</a>
+            </div>
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

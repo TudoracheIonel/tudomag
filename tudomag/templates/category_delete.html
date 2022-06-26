@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Lista Categorii{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    Sunteti sigur ca dori sa stergeti categoria {{ category.name }} ???
+    <button type="'submit">Sterge</button>
+
+</form>
+
+
+{% endblock %}
